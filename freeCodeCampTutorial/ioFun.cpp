@@ -1,5 +1,6 @@
 #include<iostream>
 #include<ios>
+#include<string>
 #include<iomanip>
 
 int main(){
@@ -120,22 +121,22 @@ int main(){
 	std::cout<<"The last five digits are garbage because double only has 15 bit support"<<std::endl;
 	
 	double d=34.1;
-  double e=101.99;
-  double f=12.0;
-  int g=45;
-  std::cout<<"noshowpoint: "<<std::endl;
-  std::cout<<"d: "<<d<<std::endl;
-  std::cout<<"e: "<<e<<std::endl;
-  std::cout<<"f: "<<f<<std::endl;
-  std::cout<<"g: "<<g<<std::endl;
-  
-  // Showpoint forces the number to be written in the set precision
-  std::cout<<std::endl;
-  std::cout<<std::setprecision(4);
-  std::cout<<std::showpoint;
-  std::cout<<"showpoint: "<<std::endl;
-  std::cout<<"d: "<<d<<std::endl;
-  std::cout<<"e: "<<e<<std::endl;
-  std::cout<<"f: "<<f<<std::endl;
-  std::cout<<"g: "<<g<<std::endl;
+	double e=101.99;
+	double f=12.0;
+	int g=45;
+	std::cout<<"noshowpoint: "<<std::endl;
+	std::cout<<"d: "<<d<<std::endl;
+	std::cout<<"e: "<<e<<std::endl;
+	std::cout<<"f: "<<f<<std::endl;
+	std::cout<<"g: "<<g<<std::endl;
+
+	// Showpoint forces the number to be written in the set precision
+	std::cout<<std::endl;
+	std::cout<<std::setprecision(4);
+	std::cout<<std::showpoint;
+	std::cout<<"showpoint: "<<std::endl;
+	std::cout<<"d: "<<d<<std::endl;
+	std::cout<<"e: "<<e<<std::endl;
+	std::cout<<"f: "<<f<<std::endl;
+	std::cout<<"g: "<<g<<std::endl;
 } // end main
