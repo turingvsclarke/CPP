@@ -24,6 +24,8 @@ int main()
     
     int x=(5>3)?5:3;
     std::cout<<x;
-    
-    
+  
+    for(int j;j<10;j++){
+      std::cout<<j<<std::endl;
+    }
 }
