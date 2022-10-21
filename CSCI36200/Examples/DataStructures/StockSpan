@@ -1,0 +1,54 @@
+#include<iostream>
+#include<stack>
+
+int * (int prices[]){
+
+	// We have an array of integers representing price and we want to output an array
+	
+
+	int S[prices.size];
+	
+	std::stack<int> indices; 
+	
+
+	// Loop through the array of prices 
+	for(i=0;i++;i<prices.size){
+
+		curr_price = prices[i]; 
+		
+		// The  
+		// The first value you'll compare with is the current 
+		comp_value = prices[indices.top];
+		int h = indices.top;	
+
+
+
+		// In total, this loop can only be run 2n times. Note that every value is pushed on to the top one time
+		// But that means that every value can only be popped at most 1 time. Thus, the total number of 
+		pops is at most n. 
+
+
+		while((!indices.empty()) && curr_price!<comp_value){
+			// pop the uninteresting top value and look at the next one
+			indices.pop();	
+			comp_value = prices[indices.top];
+			h = indices.top;
+		}
+
+		if(indices.empty()){
+			h = -1; 
+		}
+		S[i]= i-h;
+		Stack.push(curr_price);    // Push the current price on top of the stack
+	}
+
+	return S;
+
+} // end function
+
+int main(){
+
+	// Create some
+
+
+} // end main 

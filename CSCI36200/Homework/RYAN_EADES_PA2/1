@@ -1,0 +1,58 @@
+// main.cpp
+#include "Node.h"
+#include<iostream>
+#include<algorithm>
+
+Node Tree(int values[],int size){
+	int root_loc = (size-1)/2;
+	int root_val = values[root_loc];
+	Node root(root_val);
+	
+	// If there are values to the left of this subtree's root, keep creating more subtrees
+	if(root_loc>0){
+		// Construct a bst using the left values
+		int lvalues[root_loc];
+		for(int i=0;i<root_loc;i++){
+			lvalues[i]=values[i];
+		}	
+		Node l_child = Tree(lvalues,root_loc);
+		root.lc=&l_child;
+		l_child.p=&root;
+		/***
+		//std::cout<<(root->lc)->value<<" is the left child of "<<root->value<<std::endl;
+		// Construct a bst using the right values
+		int rvalues[root_loc];
+		for(int i=root_loc+1;i<size;i++){
+			rvalues[i-root_loc-1]=values[i];
+		}
+		Node r_child = Tree(rvalues,root_loc);
+		root.rc=&r_child;	
+		r_child.p=&root;
+		***/
+	} // end if
+	return root;
+} // end Tree
+
+int main(){
+	int values[] = {3,4,5,15,18,19,25};
+	// Create a way to generate the size automatically
+	// int arraySize = sizeof(array)/sizeof(array[0]);
+	Node n = Tree(values,7);
+	/***
+	Node n = Node(5);
+	n.print();
+	Node nL = Node(3);
+	Node nR = Node(7);
+	Node nLL = Node(2);
+	Node nRR = Node(8);
+	nL.p = &n;
+	nR.p = &n;
+	n.rc = &nR;
+	n.lc = &nL;
+	nR.rc=&nRR;
+	nL.lc=&nLL;
+	nRR.p=&nR;
+	nLL.p=&nL;
+	***/
+	n.print();
+} // end main
