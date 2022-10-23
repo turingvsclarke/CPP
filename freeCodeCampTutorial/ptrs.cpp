@@ -72,12 +72,37 @@ int main(){
 	int *p1;
 	// This won't run. The memory isn't allocated to p1 so p1 points to a random, probably already reserved 
 	// memory space. The cpu won't let us access such space(if we could, we could modify it's value+that'd be disastrous)
-	// std::cout<<*p1<<std::endl;
+	std::cout<<*p1<<std::endl;
+	
 	p1=new int(5);
 	std::cout<<"*p1 before delete: "<<*p1<<std::endl;
 	delete p1;
 	// This works now. But if p1 points to occupied memory, this will halt the program
 	std::cout<<"*p1 after delete: "<<*p1<<std::endl;
 
+	ptr1=new int(83);
+	ptr2=ptr1;
+
+	std::cout<<"ptr1:"<<ptr1<<"-"<<*ptr1<<std::endl;
+	std::cout<<"ptr2:"<<ptr1<<"-"<<*ptr2<<std::endl;
+
+	delete ptr1;
+	ptr1=nullptr;
+	if(ptr1){	
+		std::cout<<"ptr1:"<<ptr1<<"-"<<*ptr1<<std::endl;
+		std::cout<<"ptr2:"<<ptr1<<"-"<<*ptr2<<std::endl;
+	}else{
+		std::cout<<"Invalid address"<<std::endl;
+	}
+	// The above is the same issue as assigning to a deleted pointer. 
+	// ptr2 could point to anything
+	// Below is the safer solution
+
+	if(ptr2){
+		std::cout<<"ptr2:"<<ptr2<<"-"<<*ptr2<<std::endl;
+	}
+	else{
+		std::cout<<"Invalid address"<<std::endl;
+	}
 	std::cout<<"The program got to the end"<<std::endl;
 } // end maind
