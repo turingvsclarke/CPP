@@ -26,11 +26,13 @@ int bst::getMax(){
 	return current->value;
 }
 
-void bst::insert(Node node){
+void bst::insert(int value){
+	Node node=Node(value);
 	// Find a place for the node
-	Node* current=root;
+	Node* current=bst::root;
 	if(!current){
-		root=&node;
+		std::cout<<"Hello"<<std::endl;
+		bst::root=&node;
 	}
 	while(current){
 		// Check the left node then the right node
@@ -60,15 +62,18 @@ void bst::insertArray(int arr[],int length){
 	if(length>2){
 		int midIndex=floor(length/2);		
 		int mid=arr[midIndex];
-		insert(Node(mid));
+		std::cout<<"The middle is "<<mid<<std::endl;
+		bst::insert(mid);
 		int left[midIndex];
 		int right[length-midIndex-1];
 		for(int i=0;i<length;i++){
 			// Separate the array into two different arrays
 			if(i<midIndex){
+				std::cout<<"Adding "<<arr[i]<<"to left"<<std::endl;
 				left[i]=arr[i];
 			} // end if
 			else if(i>midIndex){
+				std::cout<<"Adding "<<arr[i]<<"to right"<<std::endl;
 				right[i-midIndex-1]=arr[i];
 			} // end else
 		} // end for
@@ -82,7 +87,7 @@ void bst::insertArray(int arr[],int length){
 			bst::insert(21);
 		}
 			if(length==2){
-			//	insert(arr[1]);
+			bst::insert(arr[1]);
 			} // end if
 	} // end else
 } // end insertArray

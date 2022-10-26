@@ -14,7 +14,7 @@ class bst {
 		bst(); // the constructor takes an array of values and creates a well-ordered bst
 		int getMax(); // this will return the maximum value for the tree
 		int getMin(); // this will return the minimum value for the tree
-		void insert(Node node);
+		void insert(int value);
 		void insertArray(int arr[], int length);
 		int getKMin(int k); // this will return the kth minimum for the tree
 		int getSuccessor(int key); // This will return the successor of a given value

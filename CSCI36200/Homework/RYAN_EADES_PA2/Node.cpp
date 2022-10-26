@@ -12,21 +12,21 @@ Node::Node(int v){
 
 void Node::print(){
 	// Print the current node's value and all its children's values
-	std::cout<<"Node's value: "<<value<<std::endl;
+	std::cout<<"Node's value: "<<Node::value<<std::endl;
 	
 	// Print the left subtree
 	if(lc){
-		std::cout<<"Value of left child: "<<lc->value<<std::endl;
-		lc->print();
+		std::cout<<"Value of left child: "<<Node::lc->value<<std::endl;
+		Node::lc->print();
 	} // end if
 	else{
 		std::cout<<"This node has no left child."<<std::endl;
 	} 
 
 	// Print the right subtree
-	if(rc){
-		std::cout<<"Value of right child: "<<rc->value<<std::endl;
-		rc->print();
+	if(Node::rc){
+		std::cout<<"Value of right child: "<<Node::rc->value<<std::endl;
+		Node::rc->print();
 	} // end if	
 	else{
 		std::cout<<"This node has no right child."<<std::endl;
@@ -35,8 +35,8 @@ void Node::print(){
 	std::cout<<"Done printing node "<<value<<std::endl;
 
 	// Tell the user we're moving on
-	if(p){
-		std::cout<<"Moving back to node "<<p->value<<std::endl;
+	if(Node::p){
+		std::cout<<"Moving back to node "<<Node::p->value<<std::endl;
 		// Refer back to ancestors until there's still a left child
 		Node c_node = *this;
 		Node parent=*p;
