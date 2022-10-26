@@ -13,7 +13,7 @@ Node::Node(int v){
 void Node::print(){
 	// Print the current node's value and all its children's values
 	std::cout<<"Node's value: "<<value<<std::endl;
-
+	
 	// Print the left subtree
 	if(lc){
 		std::cout<<"Value of left child: "<<lc->value<<std::endl;
@@ -21,7 +21,7 @@ void Node::print(){
 	} // end if
 	else{
 		std::cout<<"This node has no left child."<<std::endl;
-	} // 
+	} 
 
 	// Print the right subtree
 	if(rc){
@@ -51,3 +51,4 @@ void Node::print(){
 	} // end else
 
 } // end print
+
