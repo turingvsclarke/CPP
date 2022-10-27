@@ -6,10 +6,9 @@
 #include<cmath>
 
 bst::bst(){
-	// int root_loc = (size-1)/2;
-	root = NULL;
+	root = nullptr;
 }
-
+// This function has been tested and works
 int bst::getMin(){
 	Node* current=root;
 	while(current->lc){
@@ -17,7 +16,7 @@ int bst::getMin(){
 	}
 	return current->value;
 }
-
+// This function has been tested and works
 int bst::getMax(){
 	Node* current=root;
 	while(current->rc){
@@ -30,28 +29,34 @@ void bst::insert(int value){
 	Node node=Node(value);
 	// Find a place for the node
 	Node* current=bst::root;
+	// If the root is a null pointer, make the root point to the new node
 	if(!current){
-		std::cout<<"Hello"<<std::endl;
 		bst::root=&node;
+		std::cout<<"Assigned the root the value "<<value<<std::endl;	
+		return;
 	}
-	while(current){
+	// Since the tree has a root, there should be some 
+	while(true){
 		// Check the left node then the right node
+		// The node's value is less than our current node's, so it must be in its left subtree
 		if(node.value<current->value){
+			// Next time, compare the node to our current node's left child if it exists
 			if(current->lc){
 				current=current->lc;
+			// If no left child exists, the node is the first thing less than our current node
 			}else{
 				current->lc=&node;
 				node.p=current;
-				current=NULL;
+				return;
 			} // end else
-	
+		// The node's value is greater than our current node, so it must be in its right subtreee
 		}else{
 			if(current->rc){
 				current=current->rc;
 			} else{
 				current->rc=&node;
 				node.p=current;
-				current=NULL;
+				return;
 			} // end else
 		} // end else
 	} // end while

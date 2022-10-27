@@ -5,9 +5,9 @@
 
 Node::Node(int v){
 	value = v;
-	p = NULL;
-	rc = NULL;
-	lc = NULL;
+	p = nullptr;
+	rc = nullptr;
+	lc = nullptr;
 } // end constructor
 
 void Node::print(){
