@@ -6,8 +6,11 @@ int main()
 {
   // References must be initialized upon declaration
   // int& nada;    
-    
-    
+  /*** This is illegal because y is const
+  int x=5;
+  const int& y=x;
+  y=5;
+  ***/
   int n=5;
   int& n5=n;
   n5=3;
