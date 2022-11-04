@@ -8,31 +8,37 @@
 bst::bst(){
 	root = nullptr;
 }
-// This function has been tested and works
-int bst::getMin(){
+// This function has been tested and works. It fails if the function has no root. 
+Node* bst::getMin(){
 	Node* current=root;
+	if(!current){
+		return current;
+	}
 	while(current->lc){
 		current=current->lc;
 	}
-	return current->value;
+	return current;
 }
 // This function has been tested and works
-int bst::getMax(){
+Node* bst::getMax(){
 	Node* current=root;
-	while(current->rc){
-		current=current->rc;
+	while(true){
+		if(!current){
+			return current;
+		}
+		else{
+			current=current->rc;
+		}
 	}
-	return current->value;
 }
 
-void bst::insert(int value){
-	Node node=Node(value);
+void bst::insert(Node node){
 	// Find a place for the node
 	Node* current=bst::root;
 	// If the root is a null pointer, make the root point to the new node
 	if(!current){
 		bst::root=&node;
-		std::cout<<"Assigned the root the value "<<value<<std::endl;	
+		std::cout<<"Assigned the root the value "<<node.value<<std::endl;	
 		return;
 	}
 	// Since the tree has a root, there should be some 
@@ -62,23 +68,26 @@ void bst::insert(int value){
 	} // end while
 } // end insert
 
-void bst::insertArray(int arr[],int length){
+
+void bst::insertArray(Node arr[],int length){
+	std::cout<<2+2<<std::endl;
+	/***
 	// Find the middle of the array
 	if(length>2){
 		int midIndex=floor(length/2);		
-		int mid=arr[midIndex];
-		std::cout<<"The middle is "<<mid<<std::endl;
+		Node mid=arr[midIndex];
+		std::cout<<"The middle is "<<mid.value<<std::endl;
 		bst::insert(mid);
-		int left[midIndex];
-		int right[length-midIndex-1];
+		Node left[midIndex];
+		Node right[length-midIndex-1];
 		for(int i=0;i<length;i++){
 			// Separate the array into two different arrays
 			if(i<midIndex){
-				std::cout<<"Adding "<<arr[i]<<"to left"<<std::endl;
+				//std::cout<<"Adding "<<arr[i]<<"to left"<<std::endl;
 				left[i]=arr[i];
 			} // end if
 			else if(i>midIndex){
-				std::cout<<"Adding "<<arr[i]<<"to right"<<std::endl;
+				//std::cout<<"Adding "<<arr[i]<<"to right"<<std::endl;
 				right[i-midIndex-1]=arr[i];
 			} // end else
 		} // end for
@@ -87,17 +96,16 @@ void bst::insertArray(int arr[],int length){
 		insertArray(right,length-midIndex-1);
 	}else{
 		if(length>0){
-			std::cout<<"arr[0]---"<<arr[0]<<std::endl;
-			std::cout<<"arr[1]---"<<arr[1]<<std::endl;
-			bst::insert(21);
+			std::cout<<"arr[0]---"<<arr[0].value<<std::endl;
+			std::cout<<"arr[1]---"<<arr[1].value<<std::endl;
+			bst::insert(arr[0]);
 		}
 			if(length==2){
 			bst::insert(arr[1]);
 			} // end if
 	} // end else
+	***/
 } // end insertArray
-
-
 
 
 /***
