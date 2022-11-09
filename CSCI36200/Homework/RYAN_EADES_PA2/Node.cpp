@@ -3,6 +3,13 @@
 #include<algorithm>
 #include "Node.h"
 
+Node::Node(){
+	value=0;
+	p=nullptr;
+	rc=nullptr;
+	lc=nullptr;
+}
+
 Node::Node(int v){
 	value = v;
 	p = nullptr;
