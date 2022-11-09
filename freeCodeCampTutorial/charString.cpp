@@ -34,6 +34,10 @@ int main(){
 
 
 	/************ TURNING ALL THE LOWER CASE INTO UPPER CASE **********/
-
-
+	for(auto &ch:string){
+		if(islower(ch)){
+			ch=toupper(ch);
+		} // end if
+	} // end for
+	std::cout<<"This is the string converted to upper case: "<<string<<std::endl;
 }
