@@ -68,37 +68,34 @@ void bst::insert(Node node){
 
 
 void bst::insertArray(Node arr[],int length){
-
+	std::cout<<"The value at the beginning of the array is "<<(*arr).value<<std::endl;
 	// Find the middle of the array
+	std::cout<<"The array is: ";
+	for(int i=0;i<length;i++){
+		std::cout<<arr[i].value;
+		if(i+1==length){
+			std::cout<<std::endl;
+		}
+		else{
+			std::cout<<",";
+		}
+	}
 	if(length>2){
 		int midIndex=floor(length/2);
-		std::cout<<"The middle of the array is at index: "<<midIndex<<std::endl;		
-		Node mid=arr[midIndex];
-		std::cout<<"The middle is "<<mid.value<<std::endl;
-		bst::insert(mid);	
-		Node left[midIndex];
-		Node right[length-midIndex-1];
-		for(int i=0;i<length;i++){
-			// Separate the array into two different arrays
-			if(i<midIndex){
-				//std::cout<<"Adding "<<arr[i]<<"to left"<<std::endl;
-				left[i]=arr[i];
-			} // end if
-			else if(i>midIndex){
-				//std::cout<<"Adding "<<arr[i]<<"to right"<<std::endl;
-				right[i-midIndex-1]=arr[i];
-			} // end else
-		} // end for
-		// Insert those arrays
-		insertArray(left,midIndex);
-		insertArray(right,length-midIndex-1);
+		//Node mid=arr[midIndex];
+		this->insert(arr[midIndex]);		
+		//root->print();	
+		this->insertArray(arr,midIndex);
+		this->insertArray(arr+midIndex+1,length-midIndex-1);
 		
 	}else{
 		if(length>0){
-			bst::insert(arr[0]);
+			this->insert(arr[0]);
+			//root->print();
 		}
 			if(length==2){
-			bst::insert(arr[1]);
+			this->insert(arr[1]);
+			//root->print();
 			} // end if
 	} // end else
 } // end insertArray
