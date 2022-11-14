@@ -13,13 +13,17 @@ int main(){
 	
 	std::cout<<"strcmp ("<<string2<<","<<string<<") : "<<strcmp(string2,string)<<std::endl;
 
+	char* s1="aaaaaaaaabb";
+	char* s2="aaaaaaaaaaa";
+	char* s3="aaaaaaaaaab";
 	int n=10;
 	/// strncmp stops trying to compare after n chars
-	std::cout<<"strncmp ("<<string<<","<<string2<<","<<n<<") : "<<strncmp(string,string2,n)<<std::endl;
-
+	std::cout<<"strncmp ("<<s1<<","<<s2<<","<<n<<") : "<<strncmp(s1,s2,n)<<std::endl;	
+	std::cout<<"strncmp ("<<s2<<","<<s3<<","<<n<<") : "<<strncmp(s2,s3,n)<<std::endl;
+		
 
 	/*********   Finding all the instances of a given character ***********/
-	char str[]="This is a silly, snaking string with a lot of s's";
+	const char str[]="This is a silly, snaking string with a lot of s's";
 
 	std::cout<<"Looking for the 's' character in: \n"<<str<<std::endl;
 	char* result=str;
