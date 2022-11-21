@@ -1,9 +1,9 @@
 #include<iostream>
 #include<string>
 
-void duckSounds(){
-	std::cout<<"Quack, quack"<<std::endl;
-} // end duckSounds
+// header so that ducksounds can come after main
+
+void duckSounds();
 
 int dateToMonth(std::string month){
 	if(month=="Jan"){
@@ -49,3 +49,8 @@ int main() {
 	double c=max(5.5,6.7778);
 	std::cout<<"the max of "<<x<<" and "<<y<<" is "<<c<<std::endl;
 } // end main
+
+
+void duckSounds(){
+	std::cout<<"Quack, quack"<<std::endl;
+} // end duckSounds
