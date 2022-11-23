@@ -1,9 +1,9 @@
 #include<iostream>
 #include<string>
-
+#include "duckSounds.h"
+#include "max.h"
 // header so that ducksounds can come after main
 
-void duckSounds();
 
 int dateToMonth(std::string month){
 	if(month=="Jan"){
