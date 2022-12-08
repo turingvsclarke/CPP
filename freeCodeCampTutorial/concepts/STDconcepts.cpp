@@ -6,7 +6,7 @@
  // integral type is required
 requires std::integral<T>
  T multiply(T a, T b)
- // we can also put requires std::integral here
+ // we can also put requires std::integral<T> here
  {
 	return a*b;
 } // end multiply template
@@ -21,9 +21,8 @@ T max(T a, T b){
     } // end else
 } // end max
 
-// A third way 
-template <typename T>
-// If you're using auto
+// A third way to make a concept
+// If you're using auto(this sets up a template)
 auto add(std::integral auto a, std::integral auto b){
     return a+b;    
 }
@@ -47,5 +46,6 @@ int main()
 	double z=5.5;
     std::cout<<"Trying to multiply integers "<<x<<" and "<<y<<" :"<<multiply(x,y)<<std::endl;
 
-
+    add(g,h);
+   //  add(a,z); doesn't work because doubles
 }
