@@ -1,9 +1,8 @@
 // main.cpp
-
 #include <iostream>
 #include <string>
 #include "constants.h"
-#include "cylinder.cpp"
+#include "cylinder.h"
 
 int main()
 {

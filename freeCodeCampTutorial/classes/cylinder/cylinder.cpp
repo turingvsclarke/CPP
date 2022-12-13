@@ -1,7 +1,9 @@
 // cylinder.cpp
+#include "constants.h"
 #include "cylinder.h"
-
+#include<iostream>
 // This forces the compiler to make a default, null-param constructor
+
 Cylinder::Cylinder(double rad, double h){
     radius=rad;
     height=h;
@@ -22,3 +24,4 @@ void Cylinder::setRadius(double rad){
 void Cylinder::setHeight(double h){
     height=h;    
 }
+

@@ -1,8 +1,10 @@
 // cylinder.h
-#ifndef  CYLINDER_H
-#define  CYLINDER_H
+#ifndef CYLINDER_H
+#define CYLINDER_H
 #include "constants.h"
-
+#include<algorithm>
+#include<iostream>
+const std::string secret="hello";
 class Cylinder {
     // public: 
     private:
