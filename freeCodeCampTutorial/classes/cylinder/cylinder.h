@@ -21,7 +21,9 @@ class Cylinder {
         }
         ***/
         Cylinder(double rad, double h);
-        double volume();
+        //// Destructors
+	~Cylinder();
+	double volume();
  
         double getRadius(); 
         double getHeight();
