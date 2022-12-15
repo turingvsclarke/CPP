@@ -1,0 +1,57 @@
+#include<iostream>
+#include <stdio.h>
+#include<string>
+
+class Dog{
+    public:
+        std::string name;
+};
+struct Cat{
+    std::string name;
+    Cat(){
+        std::cout<<"Cat constructor called"<<std::endl;
+    }
+};
+
+struct Point{
+    double x;
+    double y;
+    int * a;
+    std::string* s;
+    void fancyFunction(){
+        int var=50;
+        double tween=10.42212;
+    }
+};
+void printPoint(Point point){
+    std::cout<<"Point [ x: "<<point.x<<", y: "<<point.y<<" ]"<<std::endl;
+}
+
+int main()
+{
+    Dog d1;
+    Cat c1;
+    d1.name="Fluffy";
+    c1.name="Garfield";
+    std::cout<<c1.name<<std::endl;
+    
+    Point p1; 
+    p1.x=5.4;
+    p1.y=4.2;
+    printPoint(p1);
+    std::cout<<"Size of p1.x: "<<sizeof(p1.x)<<std::endl;
+    std::cout<<"Size of p1.y: "<<sizeof(p1.x)<<std::endl;
+    std::cout<<"Size of point object: "<<sizeof(p1)<<std::endl;
+    
+    /***** Playing with sizes *****/
+    const char* apples="MacIntosh, Gala, Pink Lady";
+    std::cout<<"Size of apples: "<<sizeof(apples)<<std::endl;
+    /******* Size of string is the size of the pointer, not the actual value *****/
+    std::string names="Ben, Jerry";
+    std::cout<<"Size of two names: "<<sizeof(names)<<std::endl;
+    std::cout<<"Size of five names itself, not the string containing them: "<<sizeof("Ben, Jerry")<<std::endl;
+    names="Ben, Jerry, Benjamin, Johnson, Alan";
+    std::cout<<"Size of five names: "<<sizeof(names)<<std::endl;
+    std::cout<<"Size of five names itself, not the string containing them: "<<sizeof("Ben, Jerry, Benjamin, Johnson, Alan")<<std::endl;
+    
+}
