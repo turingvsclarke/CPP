@@ -1,22 +1,12 @@
-#include "person.cpp"
-#include<iostream>
-class Person;
+#include "player.h"
 
-class Player:private Person {
-  public:
-    Player(std::string fname,std::string lname){
-        f_name=fname;
-        l_name=lname;
-        this->setAge(5);
-    }
-    void printFname(){
-        std::cout<<"The first name is "<<f_name<<std::endl;
-        std::cout<<"The age is "<<this->getAge()<<std::endl;
-    }
-};
+std::ostream& operator<<(std::ostream& out, const Player& player){
+     out<<"Player : [ game : "<<player.game<<" names : "<<player.getFname()<<" "<<player.getLname()<<"]";   
+    //out<<"Player : [ game : "<<player.game<<" names : "<<player.fname()<<" "<<player.lname()<<"]"; // This doesn't work because fname is private in base class
+    return out;
+}
 
-
-int main(){
-    Player p1("Bob","Saget");
-    p1.printFname();
-} // end main
+Player::Player(std::string_view game){
+    this->game=game;
+}
+Player::~Player(){};
