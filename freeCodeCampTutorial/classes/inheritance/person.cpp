@@ -1,16 +1,19 @@
-#include<string>
-class Person{
-  // This function is allegedly going to let us print out class data really easily
-  friend std::ostream& operator<<(std::ostream& out, const Person& person);
-  public:
-    std::string f_name;
-    std::string l_name;
-    int getAge(){
-        return age;
-    }
-    void setAge(int age){
-        this->age=age;
-    }
-  private:
-    int age=5;
-};
+
+#include "person.h"
+Person::Person(){
+    
+}
+Person::Person(std::string fname, std::string lname){
+    this->fname=fname;
+    this->lname=lname;
+}
+
+Person::~Person(){
+    
+}
+
+// This function is allegedly going to let us print out class data really easily
+std::ostream& operator<<(std::ostream& out, const Person& person){
+    out<<"Person : ["<<person.fname<<" "<<person.lname<<"]";
+    return out;
+}
