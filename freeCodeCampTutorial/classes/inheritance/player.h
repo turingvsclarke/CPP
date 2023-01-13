@@ -12,7 +12,8 @@ class Player:public Person {
     
   public:
     Player()=default;
-    Player(std::string_view game);
+    //Player(std::string_view game);
+    Player(std::string_view game,std::string_view fname="",std::string_view lname="");
     ~Player();
     
     private: 
