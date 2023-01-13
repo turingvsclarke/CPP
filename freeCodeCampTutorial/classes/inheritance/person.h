@@ -2,6 +2,7 @@
 #define PERSON_H
 
 #include<string>
+#include<string_view>
 #include<iostream>
 
 
@@ -23,11 +24,11 @@ class Person{
         return this->fname;
     }
     
-    void setFname(std::string fname){
+    void setFname(std::string_view fname){
         this->fname=fname;
     }
     
-    void setLname(std::string lname){
+    void setLname(std::string_view lname){
         this->lname=lname;
     }
     
@@ -35,8 +36,9 @@ class Person{
         this->age=age;
     }
     
-    
-  private:
+  //public:
+  protected: 
+  //private:
     std::string fname="Pseudonymous";
     std::string lname="Bosch";
     int age=5;
